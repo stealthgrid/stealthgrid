@@ -212,10 +212,10 @@ contract MyAdvancedToken is owned, StealthGridToken {
     /// @param target Address to receive the tokens
     /// @param mintedAmount the amount of tokens it will receive
     function mintToken(address target, uint256 mintedAmount) onlyOwner public returns  (bool success) {
-        balanceOf[target] += mintedAmount * 1 ether;
-        totalSupply += mintedAmount * 1 ether;
-        Transfer(0, this, mintedAmount * 1 ether);
-        Transfer(this, target, mintedAmount * 1 ether);
+        balanceOf[target] += mintedAmount;
+        totalSupply += mintedAmount;
+        Transfer(0, this, mintedAmount);
+        Transfer(this, target, mintedAmount);
         return true;
     }
 
